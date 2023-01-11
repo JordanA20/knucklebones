@@ -23,41 +23,42 @@ const useGameState = (player, state) => {
       }
     }
 
-    const SetModal = (ganador) => {
-      document.querySelector('.mdlHead').firstChild.textContent = 'VICTORIA'
-      document.querySelector('.mdlBody').firstChild.textContent = `El ${ganador} jugador es el vencedor`
+    const SetModal = (winner) => {
+      document.querySelector('.mdlHead').firstChild.textContent = 'Partida terminada'
+      document.querySelector('.mdlBody').firstChild.textContent = `${winner} es el vencedor`
       document.querySelector('.mdlFooter').firstChild.textContent = 'Reintentar'
       document.querySelector('.mdlFooter').lastChild.textContent = 'Salir'
       document.querySelector('.mdlQuestions').parentElement.classList.remove('hide')
+      document.getElementsByClassName('total-pjScore')[0].lastChild.textContent = player[0].score
+      document.getElementsByClassName('total-pjScore')[1].lastChild.textContent = player[1].score
 
       if(document.querySelector('.mdlBody-total').classList.contains('hide')) 
         document.querySelector('.mdlBody-total').classList.remove('hide')
 
-      document.getElementsByClassName('total-pjScore')[0].lastChild.textContent = player[0].score
-      document.getElementsByClassName('total-pjScore')[1].lastChild.textContent = player[1].score
     }
     
     if(state && player[0].score > 0) {
       
       player[0].score > player[1].score ?
-      setTimeout(() => { SetModal('primer') }, 700) :
+      setTimeout(() => { SetModal(player[0].name) }, 700) :
 
       player[0].score < player[1].score ?
-      setTimeout(() => { SetModal('segundo') }, 700) : 
+      setTimeout(() => { SetModal(player[1].name) }, 700) :
       SetModal(null)
 
       setGameState('end')
-      setTimeout(() => { wipeBoard() }, 700);
-      document.querySelector(`#diceP${turn}`).classList.add('hide')
+      setTimeout(() => { wipeBoard() }, 750);
+      if(document.querySelector(`#diceP${turn}`) !== null)
+        document.querySelector(`#diceP${turn}`).classList.add('hide')
       setTurn(null)
     }
     else if(!state) { 
       if(turn !== null) setTurn(Math.floor(Math.random()*(2-1+1)+1))
       setDice('')
       setHidden(true)
-      wipeBoard()
+      setTimeout(() => { wipeBoard() }, 750);
     }
-  }, [gameState, player, state, setTurn, setHidden])
+  }, [gameState, player, state, setTurn, setHidden, setDice])
 
   return gameState
 }

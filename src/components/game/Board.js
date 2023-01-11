@@ -37,8 +37,8 @@ const Board = ({mode, level}) => {
           boxes = document.getElementsByClassName('secondP')[1].children[i]
           for(let j = 0; j < boxes.children.length; j++) {
             if (boxes.children[j].innerHTML === dice) {
-              Math.floor(Math.random()*((level*4)-1+1)) !== i ? box = i :
-              box = box
+              if(Math.floor(Math.random()*((level*4)-1+1)) !== i) 
+              box = i
             }
             if (box !== null) break
           }
@@ -139,8 +139,7 @@ const Board = ({mode, level}) => {
       if (bonus === 1) {
         boxes[Math.abs(box-i)].firstChild.classList.add('double')
       }
-      else{ 
-        console.log(boxes[Math.abs(box-i)].firstChild)
+      else{
         boxes[Math.abs(box-i)].firstChild.classList.remove('double')
         boxes[Math.abs(box-i)].firstChild.classList.add('triple')
       }
