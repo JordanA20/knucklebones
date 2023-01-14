@@ -33,7 +33,7 @@ const Game = ({params = {mode: undefined, level: undefined}}) => {
       {/* Modals */}
       <section>
         <article className='mdlQuestions z-100'>
-        <div className='mdlHead'>
+          <div className='mdlHead'>
             <h3>¿SALIR AL MENU?</h3>
           </div>
           <div className='mdlBody'>

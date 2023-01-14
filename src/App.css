@@ -630,19 +630,19 @@ section:has( > .mdlQuestions){
 
 
 /* Mobile */
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 560px) {
   /* HOME */
   .menu { min-width: 100%; background: transparent; }
 
   .menu h1 { font-size: 12vw; }
 
-  .menu-difficulty h3 { font-size: 8.5vw; margin-bottom: 0;}
+  .menu-difficulty h3 { font-size: 7.5vw; margin-bottom: 0;}
 
   .menu-mode, .menu-difficulty, .menu-difficulty div { width: 100%; }
   
-  .menuOption, .menuOption:hover, .mdlOption { width: 50%; font-size: 6vw; }
+  .menuOption, .menuOption:hover, .mdlOption { width: 45%; font-size: 4.5vw; }
 
-  .menuOption:hover {width: 55%; font-size: 6.5vw; }
+  .menuOption:hover {width: 40%; font-size: 5vw; }
 
   /* GAME */
   .playingField {
@@ -686,7 +686,7 @@ section:has( > .mdlQuestions){
     grid-template-rows: repeat(auto-fill, 30% 30% 30%);
   }
 
-  .boxScore { font-size: 5.5vw;}
+  .boxScore { font-size: 4vw;}
 
 
   /* Player Section */
@@ -724,16 +724,16 @@ section:has( > .mdlQuestions){
   }
 
   .playerImg, .playerImg img {
-    width: 25vw;
-    height: 25vw;
+    width: 19vw;
+    height: 19vw;
     padding: 0;
   }
 
   .btnOptions { width: 8vw; top: 39.5%; }
 
   .btnOptions:hover div:first-child{
-    width: 9vw;
-    transform: rotate(59deg);
+    width: 7vw;
+    transform: rotate(50deg);
   }
   
   .btnOptions:hover div:nth-child(2){
@@ -741,11 +741,11 @@ section:has( > .mdlQuestions){
   }
   
   .btnOptions:hover div:last-child{
-    width: 9vw;
-    transform: rotate(-59deg);
+    width: 7vw;
+    transform: rotate(-50deg);
   }
 
-  .totalScore { height: 25%; font-size: 6.8vw; }
+  .totalScore { height: 25%; font-size: 4.5vw; }
   
   .contDiceBox { 
     width: 100%;
@@ -755,9 +755,9 @@ section:has( > .mdlQuestions){
   }
   
   .diceBox {
-    min-width: 43vw;
+    min-width: 36vw;
     height: 5.7rem;
-    min-height: 6.9rem;
+    min-height: 7.5rem;
     margin-top: 1.1rem;
   }
   
@@ -779,18 +779,22 @@ section:has( > .mdlQuestions){
 
 
   /* Modals */
-  .mdlQuestions { width: 95%; height: 32%; }
+  .mdlQuestions { 
+    width: 95%; 
+    height: 45%;
+    justify-content: space-between;
+  }
 
   .mdlHead {
-    padding: .8rem 0;
+    padding: .5rem 0;
     border-bottom: 1px solid white;
   }
   
-  .mdlHead > h3 { margin: 0; font-size: 7vw; }
+  .mdlHead > h3 { margin: 0; font-size: 6vw; }
   
-  .mdlBody { margin: 1.5rem 0 4rem 0; }
+  .mdlBody { margin: 0 0 0 0; }
 
-  .mdlBody p { font-size: 6vw; }
+  .mdlBody p { font-size: 5vw; }
 
-  .mdlOption:hover {font-size: 6.5vw; }
+  .mdlOption:hover {font-size: 5vw; }
 }

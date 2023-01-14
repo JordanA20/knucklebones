@@ -13,8 +13,8 @@ function App() {
         <GameContextProvider>
           <PlayerContext.Provider value={{
             playerData: [
-              {name: 'Victor', score: 0, diceValue: 0,},
-              {name: 'Sr. S', score: 0, diceValue: 0,}
+              {name: 'Issac', score: 0, diceValue: 0,},
+              {name: 'Victor', score: 0, diceValue: 0,}
             ]
           }}>
             <Route 
